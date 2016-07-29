@@ -45,7 +45,8 @@
 <script src="js/jquery.classycountdown.js"></script>
 <script>
 var date1 = new Date($.now());
-var date2 = new Date('2016-08-11 10:00:00')
+// var date2 = new Date('2016-08-11 10:00:00')
+var date2 = new Date(2016, 07, 11, 10, 0, 0, 0);
 var difference = (date2 - date1)/1000;
 $('#countdown2').ClassyCountdown({		
 		end: difference,
