@@ -10,7 +10,7 @@
     <!-- Latest compiled and minified CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" rel="stylesheet">
     <!-- Stylesheet -->
-    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
@@ -18,24 +18,31 @@
     <link href="css/jquery.classycountdown.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
+    <div class="container">
+        <div class="row">
             <div class="cover-container">
-                <div class="inner cover">
-					<img src="munilogo.png" width="300" class="cover-heading" alt="Municipalidad de Córdoba" />
-                    <p class="lead subtitle fancy">
+                <div class="row">
+                    <i class="sprite sprite-municipalidad-logo"></i>
+                    <p class="lead date-launch fancy">
                         <span>Presentación: Jueves 11 de Agosto</span>
                     </p>
-                    <div id="countdown2" class="ClassyCountdownDemo"></div>
+                    <!-- Countdown Launch -->
+                    <div id="countdown-timer"></div>
+                    <!-- Main Title -->
                     <h1 class="title lead">Portal de Gobierno Abierto</h1>
+                    <!-- Subtitle -->
                     <h2>Portal de Datos - Plan de Metas - Funcionarios - Sueldos - Declaraciones Juradas - Acceso a la información pública - Participación ciudadana - Software Público Libre - GeoPortal</h2>
                 </div>
-                <div class="mastfoot">
-                    <div class="social-icons">
-                        <div class="inner">
-                            <a href="https://www.facebook.com/MuniCba/" target="_blank"><img src="img/face.png" class="sm-icons" alt="Facebook" /></a>
-                            <a href="https://twitter.com/municba" target="_blank"><img src="img/tw.png" class="sm-icons" alt="Twitter" /></a>
-                        </div>
+                <div class="row links-social-networks">
+                    <div class="col-xs-2 col-xs-offset-4">
+                        <a href="https://www.facebook.com/MuniCba/" target="_blank">
+                            <i class="sprite sprite-facebook-logo social-network-icon"></i>
+                        </a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a href="https://twitter.com/municba" target="_blank">
+                            <i class="sprite sprite-twitter-logo social-network-icon"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -45,59 +52,60 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- JS Dependencies -->
     <script src="js/jquery.knob.js"></script>
     <script src="js/jquery.throttle.js"></script>
     <script src="js/jquery.classycountdown.js"></script>
     <!-- Countdown Script -->
     <script>
-        var date1 = new Date($.now());
-        var date2 = new Date(2016, 07, 11, 10, 0, 0, 0);
-        var difference = (date2 - date1)/1000;
+        var nowDate = new Date($.now()),
+            launchDate = new Date(2016, 07, 11, 10, 0, 0, 0),
+            difference = (launchDate - nowDate)/1000;
         
-        $('#countdown2').ClassyCountdown({		
+        $('#countdown-timer').ClassyCountdown({		
     		end: difference,
     		now: '0',
     		labels: true,
     		style: {
-    			element: "",
+    			element: '',
     			textResponsive: .5,
     			days: {
     				gauge: {
     					thickness: .02,
-    					bgColor: "rgba(0,0,0,0.05)",
-    					fgColor: "#00c47c"
+    					bgColor: 'rgba(0,0,0,0.05)',
+    					fgColor: '#00c47c'
     				},
     				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:100; color:#fff;'
     			},
     			hours: {
     				gauge: {
     					thickness: .02,
-    					bgColor: "rgba(0,0,0,0.05)",
-    					fgColor: "#00de8c"
+    					bgColor: 'rgba(0,0,0,0.05)',
+    					fgColor: '#00de8c'
     				},
     				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#fff;'
     			},
     			minutes: {
     				gauge: {
     					thickness: .02,
-    						bgColor: "rgba(0,0,0,0.05)",
-    						fgColor: "#00f79c"
+                        bgColor: 'rgba(0,0,0,0.05)',
+                        fgColor: '#00f79c'
     					},
-    					textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#fff;'
+                    textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#fff;'
     				},
-    				seconds: {
-    					gauge: {
-    						thickness: .02,
-    						bgColor: "rgba(0,0,0,0.05)",
-    						fgColor: "#a2ffdd"
-    					},
-    					textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#fff;'
-    				}
+    			seconds: {
+                    gauge: {
+                        thickness: .02,
+                        bgColor: 'rgba(0,0,0,0.05)',
+                        fgColor: '#a2ffdd'
+                    },
+                    textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:300; color:#fff;'
+                }
     		},
     		onEndCallback: function() {
-    		  console.log("Time out!");
+    		  console.log('Time out!');
     		}
     	});
     </script>
-  </body>
+</body>
 </html>

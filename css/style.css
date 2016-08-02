@@ -1,0 +1,136 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.cover-container {
+	margin-top: 1%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	font-size: 4em;
+	line-height: 1em;
+	color: white;
+	text-align: center;
+}
+
+.date-launch {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: white;
+  margin-top: 7.5%;
+}
+
+.fancy {
+  line-height: 0.15;
+  text-align: center;
+}
+
+.fancy span {
+  display: inline-block;
+  position: relative;  
+}
+
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  top: 0;
+  width: 100%;
+}
+
+.fancy span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.fancy span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.social-network-icon {
+	transition: all .2s ease-in-out;
+}
+
+.social-network-icon:hover{
+	transform: scale(1.5);
+	cursor: pointer;
+}
+
+@media(min-width:311px) and (max-width:767px){
+  /* Handle the widths */
+  .cover-container {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 768px) {
+  .cover-container {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 5em;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Handle the widths */
+  .cover-container {
+    width: 700px;
+  }
+
+  .title {
+    font-size: 5em;
+  }
+}
+
+/* Image Sprite */
+.sprite {
+  background-image: url(../img/sprite.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite-facebook-logo {
+    width: 75px;
+    height: 75px;
+    background-position: -5px -5px;
+    cursor: pointer;
+}
+
+.sprite-municipalidad-logo {
+    width: 265px;
+    height: 83px;
+    background-position: -90px -5px;
+    margin: auto;
+}
+
+.sprite-twitter-logo {
+    width: 75px;
+    height: 75px;
+    background-position: -365px -5px;
+    cursor: pointer;
+}
+
+.links-social-networks {
+  margin: 20px 0 20px 0;
+}
