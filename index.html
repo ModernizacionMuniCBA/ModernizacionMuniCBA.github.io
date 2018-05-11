@@ -58,7 +58,6 @@ $('#countdown2').ClassyCountdown({
 					thickness: .02,
 					bgColor: "rgba(0,0,0,0.05)",
 					fgColor: "#00c47c",
-					max: 1461
 				},
 				textCSS: 'font-family:\'Open Sans\'; font-size:25px; font-weight:100; color:#fff;'
 			},
@@ -92,6 +91,10 @@ $('#countdown2').ClassyCountdown({
 				console.log("Time out!");
 			}
 		});
+	
+	element.find('.ClassyCountdown-days input').knob($.extend({
+                max: 1461
+            }
 </script>
   </body>
 </html>
