@@ -162,7 +162,7 @@
                 MinutesLeft = 0;
                 SecondsLeft = 0;
             }
-            element.find('.ClassyCountdown-days input').val(365 - DaysLeft).trigger('change');
+            element.find('.ClassyCountdown-days input').val(1461 - DaysLeft).trigger('change');
             element.find('.ClassyCountdown-hours input').val(24 - HoursLeft).trigger('change');
             element.find('.ClassyCountdown-minutes input').val(60 - MinutesLeft).trigger('change');
             element.find('.ClassyCountdown-seconds input').val(60 - SecondsLeft).trigger('change');
