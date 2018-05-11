@@ -103,7 +103,7 @@
                 width: '100%',
                 displayInput: false,
                 readOnly: true,
-                max: 365
+                max: 1461
             }, settings.style.days.gauge));
             element.find('.ClassyCountdown-hours input').knob($.extend({
                 width: '100%',
