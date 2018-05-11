@@ -46,7 +46,8 @@ var date1 = new Date($.now());
 // var date2 = new Date('2016-08-11 10:00:00')
 var date2 = new Date(2019, 12, 10, 0, 0, 0, 0);
 var difference = (date2 - date1)/1000;
-$('#countdown2').ClassyCountdown({		
+
+var element = $('#countdown2').ClassyCountdown({	
 		end: difference,
 		now: '0',
 		labels: true,
@@ -92,7 +93,7 @@ $('#countdown2').ClassyCountdown({
 			}
 		});
 	
-	element.find('.ClassyCountdown-days input').knob($.extend({max: 1461}));
+	$('#countdown2').find('.ClassyCountdown-days input').knob($.extend({max: 1461}));
 </script>
   </body>
 </html>
